@@ -26,12 +26,13 @@ int main(int argc, char* argv[]) {
     int size = std::atoi(argv[1]);
     std::vector<int> data = generateRandomVector(size);
 
+    int maximum = data[0];
 
-#pragma omp parallel num_threads(5)
-    {
-        printf("Parallel block\n");
+#pragma omp parallel for reduction(max:maximum)
+    for (int i = 0; i < size; ++i) {
+        maximum = std::max(data[i], maximum);
     }
-    printf("Serial block 2\n");
+    std::cout << maximum << std::endl;
 
     return 0;
 }
