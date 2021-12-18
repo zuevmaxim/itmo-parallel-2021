@@ -42,8 +42,8 @@ int main(int argc, char* argv[]) {
     int size = std::atoi(argv[1]);
 
     for (int threads = 1; threads <= 10; ++threads) {
-        std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         std::vector<int> data = generateRandomVector(size);
+        std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         int tries = 50;
         for (int i = 0; i < tries; i++) {
             findMaximum(data, threads);
