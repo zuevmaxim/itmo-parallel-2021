@@ -2,7 +2,7 @@
 CC=g++
 CFLAGS=-std=c++11
 LDFLAGS=-fopenmp
-SOURCES=A00.cpp A01.cpp
+SOURCES=A00.cpp A01.cpp A02.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=hello
 
