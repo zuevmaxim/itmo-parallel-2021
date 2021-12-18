@@ -1,7 +1,7 @@
 .PHONY: clean all
 CC=g++
 CFLAGS=-std=c++11
-LDFLAGS=
+LDFLAGS=-fopenmp
 SOURCES=A00.cpp A01.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=hello
