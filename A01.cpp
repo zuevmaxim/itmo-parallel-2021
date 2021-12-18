@@ -21,6 +21,16 @@ int findMaximum(const std::vector<int>& data, int threads) {
     return maximum;
 }
 
+void test() {
+    std::cout << "===Test===";
+    std::vector<int> data{2, 4, 6, 3, 8, 10, 9, 4, 2, 10};
+    std::cout << "Maximum of vector << [";
+    for (x : data) {
+        std::cout << x << ' ';
+    }
+    std << cout << "] is " << findMaximum(data, 2);
+}
+
 int main(int argc, char* argv[]) {
     std::srand(std::time(nullptr));
 
@@ -39,9 +49,11 @@ int main(int argc, char* argv[]) {
             findMaximum(data, threads);
         }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-        std::cout << threads << ", " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() / (double)tries
-                  << std::endl;
+        double time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() / (double) tries;
+        std::cout << threads << ", " << time_ms << std::endl;
     }
+
+    test();
 
 
     return 0;
