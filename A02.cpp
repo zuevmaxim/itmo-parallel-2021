@@ -20,6 +20,7 @@ std::vector<std::vector<int>> multiply(const std::vector<std::vector<int>>& a, c
     for (int i = 0; i < size; ++i) {
         c[i].resize(size, 0);
     }
+#pragma omp parallel num_threads(threads)
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
             for (int k = 0; k < size; ++k) {
