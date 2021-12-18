@@ -22,13 +22,13 @@ int findMaximum(const std::vector<int>& data, int threads) {
 }
 
 void test() {
-    std::cout << "===Test===";
+    std::cout << "===Test===\n";
     std::vector<int> data{2, 4, 6, 3, 8, 10, 9, 4, 2, 10};
-    std::cout << "Maximum of vector << [";
-    for (x : data) {
+    std::cout << "Maximum of vector [";
+    for (int x : data) {
         std::cout << x << ' ';
     }
-    std << cout << "] is " << findMaximum(data, 2);
+    std::cout << "] is " << findMaximum(data, 2) << '\n';
 }
 
 int main(int argc, char* argv[]) {
